@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="shortcut icon" href="img/contact.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <label class="ios-toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+    <div class="page-shell">
+    <div class="container">
+        <h1>Get In Touch</h1>
+        <p>Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.</p>
+    </div>
+    
+    <div class="contact-section">
+        <form class="contact-form" id="contactForm" action="process-form.php" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-input" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-input" placeholder="Appleseed" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" class="form-input" placeholder="john@appleseed.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="subject">Subject</label>
+                <input type="text" id="subject" class="form-input" placeholder="How can we help you?" required>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea id="message" class="form-textarea" placeholder="Tell us more about your inquiry..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+            
+            <div class="success-message" id="successMessage">
+                <p>Thank you for your message! We'll get back to you soon.</p>
+            </div>
+        </form>
+    </div>
+    
+    <div class="dock-container">
+        <div class="dock">
+            <div class="dock-item">
+                <a href="index.html">
+                    <img src="img/home.png" alt="Home" class="light-icon">
+                    <img src="img/home-dark.png" alt="Home" class="dark-icon">
+                </a>
+                <span class="label">Home</span>
+            </div>
+            <div class="dock-item">
+                <a href="projects.html">
+                    <img src="img/projects.png" alt="Projects" class="light-icon">
+                    <img src="img/projects-dark.png" alt="Projects" class="dark-icon">
+                </a>
+                <span class="label">Projects</span>
+            </div>
+            <div class="dock-item">
+                <a href="about-me.html">
+                    <img src="img/about_me.png" alt="About Me" class="light-icon">
+                    <img src="img/about_me.png" alt="About Me" class="dark-icon">
+                </a>
+                <span class="label">About Me</span>
+            </div>
+            <div class="dock-item">
+                <a href="contact.html">
+                    <img src="img/contact.png" alt="Contact" class="light-icon">
+                    <img src="img/contact-dark.png" alt="Contact" class="dark-icon">
+                </a>
+                <span class="label">Contact</span>
+            </div>
+            <div class="dock-item">
+                <a href="photos.html">
+                    <img src="img/photos.png" alt="Photos" class="light-icon">
+                    <img src="img/photos-dark.png" alt="Photos" class="dark-icon">
+                </a>
+                <span class="label">Photos</span>
+            </div>
+            <div class="separator"></div>
+            <div class="dock-item">
+                <a href="books.html">
+                    <img src="img/books.png" alt="Books" class="light-icon">
+                    <img src="img/books-dark.png" alt="Books" class="dark-icon">
+                </a>
+                <span class="label">Books</span>
+            </div>
+            <div class="dock-item">
+                <a href="music.html">
+                    <img src="img/music.png" alt="Music" class="light-icon">
+                    <img src="img/music-dark.png" alt="Music" class="dark-icon">
+                </a>
+                <span class="label">Music</span>
+            </div>
+        </div>
+    </div>
+    </div>
+     <script>
+        // // Form submission handling
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const contactForm = document.getElementById('contactForm');
+        //     const successMessage = document.getElementById('successMessage');
+            
+        //     contactForm.addEventListener('submit', function(e) {
+        //         e.preventDefault();
+                
+        //         // In a real implementation, you would send the form data to a server
+        //         // For this demo, we'll just show the success message
+                
+        //         // Hide the form
+        //         contactForm.style.opacity = '0';
+        //         contactForm.style.transform = 'translateY(20px)';
+                
+        //         // Show success message after a short delay
+        //         setTimeout(function() {
+        //             successMessage.style.display = 'block';
+        //             successMessage.style.opacity = '0';
+        //             successMessage.style.transform = 'translateY(20px)';
+                    
+        //             // Animate in the success message
+        //             setTimeout(function() {
+        //                 successMessage.style.opacity = '1';
+        //                 successMessage.style.transform = 'translateY(0)';
+        //                 successMessage.style.transition = 'all 0.5s ease';
+        //             }, 100);
+        //         }, 300);
+        //     });
+            
+        //     // Dock interactivity
+        //     const dockItems = document.querySelectorAll('.dock-item');
+            
+        //     dockItems.forEach(item => {
+        //         item.addEventListener('click', function() {
+        //             // Add a subtle animation on click
+        //             this.style.transform = 'translateY(-5px) scale(1.1)';
+        //             setTimeout(() => {
+        //                 this.style.transform = '';
+        //             }, 300);
+                    
+        //             // In a real implementation, you would navigate to the appropriate page
+        //             const appName = this.querySelector('.label').textContent;
+        //             alert(`Opening ${appName}...`);
+        //         });
+        //     });
+        // });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

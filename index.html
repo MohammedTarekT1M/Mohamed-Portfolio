@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed's Portfolio</title>
+    <link rel="shortcut icon" href="img/home.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <label class="ios-toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+    <div class="container">
+        <h1>Welcome To My Portfolio</h1>
+        <p>
+          <img src="img/avatar.png" width="250" style="border-radius: 50%; vertical-align: middle; margin-right: 15px;">
+        </p>
+        <p>My name is Mohamed Tarek Wasel. I study programming at ROC Mondriaan in Delft (3rd year).</p>
+    </div>
+    
+    <div class="dock-container">
+        <div class="dock">
+            <div class="dock-item">
+                <a href="index.html">
+                    <img src="img/home.png" alt="Home" class="light-icon">
+                    <img src="img/home-dark.png" alt="Home" class="dark-icon">
+                </a>
+                <span class="label">Home</span>
+            </div>
+            <div class="dock-item">
+                <a href="projects.html">
+                    <img src="img/projects.png" alt="Projects" class="light-icon">
+                    <img src="img/projects-dark.png" alt="Projects" class="dark-icon">
+                </a>
+                <span class="label">Projects</span>
+            </div>
+            <div class="dock-item">
+                <a href="about-me.html">
+                    <img src="img/about_me.png" alt="About Me" class="light-icon">
+                    <img src="img/about_me.png" alt="About Me" class="dark-icon">
+                </a>
+                <span class="label">About Me</span>
+            </div>
+            <div class="dock-item">
+                <a href="contact.html">
+                    <img src="img/contact.png" alt="Contact" class="light-icon">
+                    <img src="img/contact-dark.png" alt="Contact" class="dark-icon">
+                </a>
+                <span class="label">Contact</span>
+            </div>
+            <div class="dock-item">
+                <a href="photos.html">
+                    <img src="img/photos.png" alt="Photos" class="light-icon">
+                    <img src="img/photos-dark.png" alt="Photos" class="dark-icon">
+                </a>
+                <span class="label">Photos</span>
+            </div>
+            <div class="separator"></div>
+            <div class="dock-item">
+                <a href="books.html">
+                    <img src="img/books.png" alt="Books" class="light-icon">
+                    <img src="img/books-dark.png" alt="Books" class="dark-icon">
+                </a>
+                <span class="label">Books</span>
+            </div>
+            <div class="dock-item">
+                <a href="music.html">
+                    <img src="img/music.png" alt="Music" class="light-icon">
+                    <img src="img/music-dark.png" alt="Music" class="dark-icon">
+                </a>
+                <span class="label">Music</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const dockItems = document.querySelectorAll('.dock-item');
+            
+        //     dockItems.forEach(item => {
+        //         item.addEventListener('click', function() {
+        //             // Add a subtle animation on click
+        //             this.style.transform = 'translateY(-5px) scale(1.1)';
+        //             setTimeout(() => {
+        //                 this.style.transform = '';
+        //             }, 300);
+                    
+        //             // In a real implementation, you would navigate to the appropriate page
+        //             const appName = this.querySelector('.label').textContent;
+        //             alert(`Opening ${appName}...`);
+        //         });
+        //     });
+        // });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

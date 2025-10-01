@@ -1,0 +1,226 @@
+:root{
+    --bg-1: rgba(12, 32, 64, 0.06);
+  --glass-1: rgba(255,255,255,0.10);
+  --glass-2: rgba(255,255,255,0.06);
+  --accent: rgba(11,116,222,0.95);
+  --muted: rgba(15,23,42,0.7);
+  --text: rgba(10,18,36,0.95);
+  --radius: 16px;
+  color-scheme: light;
+}
+.page-shell{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column
+}
+.glass, .site-header, .card, .site-footer {
+  background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(8,20,40,0.08), inset 0 1px 0 rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+}
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px
+}
+.cta-row{
+    margin-top:12px
+}
+.main{
+    padding:24px 20px 60px
+}
+.card{
+    padding:18px;
+    margin-bottom:18px
+}
+.about p{
+    line-height:1.6;
+    color:var(--text)
+}
+.btn{
+    display:inline-block;
+    padding:10px 14px;
+    border-radius:12px;
+    background:linear-gradient(180deg,var(--accent), #0a63c9);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow:0 8px 24px rgba(11,116,222,0.18)
+}
+.btn.ghost{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.28);
+    color:var(--text);
+    font-weight:700
+}
+.btn.small{
+    padding:7px 10px;
+    font-size:0.9rem
+}
+/* Contact Form Styles */
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 80px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #ff2d70, #ff9a3d);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(255, 45, 112, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 45, 112, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    background: rgba(76, 217, 100, 0.2);
+    border: 1px solid rgba(76, 217, 100, 0.4);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.success-message p {
+    color: #4cd964;
+    margin: 0;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 30px;
+        border-radius: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .dock {
+        padding: 6px 12px;
+        border-radius: 18px;
+    }
+    
+    .dock-item img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 20px;
+        border-radius: 16px;
+    }
+    
+    .dock {
+        padding: 4px 8px;
+        border-radius: 14px;
+    }
+    
+    .dock-item img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .dock-item:hover {
+        transform: translateY(-8px) scale(1.15);
+    }
+    
+    .separator {
+        height: 30px;
+    }
+}

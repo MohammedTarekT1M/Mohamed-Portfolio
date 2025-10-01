@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="shortcut icon" href="img/music.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <label class="ios-toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+    <div class="page-shell">
+    <div class="container">
+        <section id="about" class="card about">
+          <h2>Music</h2>
+          <p class="subtitle">A collection of tracks that move my soul and fuel my creativity.</p>
+          <div class="cta-row">
+             <div class="featured-section">
+            <h2 class="section-title">Currently Loving</h2>
+            <div class="featured-track">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Blinding Lights" class="featured-art">
+                <div class="featured-info">
+                    <h3 class="featured-title">Blinding Lights</h3>
+                    <p class="featured-artist">The Weeknd</p>
+                    <p class="featured-album">After Hours</p>
+                    <p class="featured-duration">3:22</p>
+                    <div class="featured-controls">
+                        <button class="control-btn primary" id="featuredPlay">
+                            <i class="fas fa-play"></i> Play Now
+                        </button>
+                        <button class="control-btn">
+                            <i class="fas fa-heart"></i> Like
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">My Playlist</h2>
+        <div class="music-grid">
+            <!-- Track 1 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Levitating" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Levitating</h3>
+                    <p class="track-artist">Dua Lipa</p>
+                    <p class="track-album">Future Nostalgia</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:23</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 2 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Save Your Tears" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Save Your Tears</h3>
+                    <p class="track-artist">The Weeknd</p>
+                    <p class="track-album">After Hours</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:35</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 3 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Don't Start Now" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Don't Start Now</h3>
+                    <p class="track-artist">Dua Lipa</p>
+                    <p class="track-album">Future Nostalgia</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:03</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 4 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Watermelon Sugar" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Watermelon Sugar</h3>
+                    <p class="track-artist">Harry Styles</p>
+                    <p class="track-album">Fine Line</p>
+                    <div class="track-meta">
+                        <span class="track-duration">2:54</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 5 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Blinding Lights" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Blinding Lights</h3>
+                    <p class="track-artist">The Weeknd</p>
+                    <p class="track-album">After Hours</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:22</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 6 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Circles" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Circles</h3>
+                    <p class="track-artist">Post Malone</p>
+                    <p class="track-album">Hollywood's Bleeding</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:35</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 7 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Adore You" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Adore You</h3>
+                    <p class="track-artist">Harry Styles</p>
+                    <p class="track-album">Fine Line</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:27</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 8 -->
+            <div class="track-card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Physical" class="album-art">
+                <div class="track-info">
+                    <h3 class="track-title">Physical</h3>
+                    <p class="track-artist">Dua Lipa</p>
+                    <p class="track-album">Future Nostalgia</p>
+                    <div class="track-meta">
+                        <span class="track-duration">3:09</span>
+                        <button class="play-btn" data-audio="https://www.soundjay.com/buttons/sounds/beep-07.mp3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!-- Now Playing Bar -->
+<div class="now-playing" id="nowPlaying">
+    <div class="now-playing-bar">
+        <div class="now-playing-info">
+            <div class="now-playing-title" id="nowPlayingTitle">No track playing</div>
+            <div class="now-playing-artist" id="nowPlayingArtist">Select a song to play</div>
+        </div>
+        <div class="now-playing-controls">
+            <button class="now-playing-btn" id="prevBtn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="now-playing-btn" id="playPauseBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="now-playing-btn" id="nextBtn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+    </div>
+      </div>
+    </div>
+    
+    <div class="dock-container">
+        <div class="dock">
+            <div class="dock-item">
+                <a href="index.html">
+                    <img src="img/home.png" alt="Home" class="light-icon">
+                    <img src="img/home-dark.png" alt="Home" class="dark-icon">
+                </a>
+                <span class="label">Home</span>
+            </div>
+            <div class="dock-item">
+                <a href="projects.html">
+                    <img src="img/projects.png" alt="Projects" class="light-icon">
+                    <img src="img/projects-dark.png" alt="Projects" class="dark-icon">
+                </a>
+                <span class="label">Projects</span>
+            </div>
+            <div class="dock-item">
+                <a href="about-me.html">
+                    <img src="img/about_me.png" alt="About Me" class="light-icon">
+                    <img src="img/about_me.png" alt="About Me" class="dark-icon">
+                </a>
+                <span class="label">About Me</span>
+            </div>
+            <div class="dock-item">
+                <a href="contact.html">
+                    <img src="img/contact.png" alt="Contact" class="light-icon">
+                    <img src="img/contact-dark.png" alt="Contact" class="dark-icon">
+                </a>
+                <span class="label">Contact</span>
+            </div>
+            <div class="dock-item">
+                <a href="photos.html">
+                    <img src="img/photos.png" alt="Photos" class="light-icon">
+                    <img src="img/photos-dark.png" alt="Photos" class="dark-icon">
+                </a>
+                <span class="label">Photos</span>
+            </div>
+            <div class="separator"></div>
+            <div class="dock-item">
+                <a href="books.html">
+                    <img src="img/books.png" alt="Books" class="light-icon">
+                    <img src="img/books-dark.png" alt="Books" class="dark-icon">
+                </a>
+                <span class="label">Books</span>
+            </div>
+            <div class="dock-item">
+                <a href="music.html">
+                    <img src="img/music.png" alt="Music" class="light-icon">
+                    <img src="img/music-dark.png" alt="Music" class="dark-icon">
+                </a>
+                <span class="label">Music</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Audio elements and state
+            let currentAudio = null;
+            let isPlaying = false;
+            let currentTrack = null;
+            
+            // DOM elements
+            const nowPlayingBar = document.getElementById('nowPlaying');
+            const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+            const nowPlayingArtist = document.getElementById('nowPlayingArtist');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const featuredPlayBtn = document.getElementById('featuredPlay');
+            
+            // Play button functionality
+            const playButtons = document.querySelectorAll('.play-btn');
+            
+            playButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    const trackCard = this.closest('.track-card');
+                    const title = trackCard.querySelector('.track-title').textContent;
+                    const artist = trackCard.querySelector('.track-artist').textContent;
+                    const audioUrl = this.getAttribute('data-audio');
+                    
+                    // If clicking the same track that's currently playing, toggle play/pause
+                    if (currentTrack === trackCard && currentAudio) {
+                        togglePlayPause();
+                        return;
+                    }
+                    
+                    // Stop current audio if playing
+                    if (currentAudio) {
+                        currentAudio.pause();
+                        currentAudio.currentTime = 0;
+                        
+                        // Reset previous play button
+                        const prevPlayBtn = currentTrack.querySelector('.play-btn');
+                        prevPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        prevPlayBtn.classList.remove('playing');
+                    }
+                    
+                    // Create new audio element
+                    currentAudio = new Audio(audioUrl);
+                    currentTrack = trackCard;
+                    
+                    // Update now playing bar
+                    nowPlayingTitle.textContent = title;
+                    nowPlayingArtist.textContent = artist;
+                    nowPlayingBar.classList.add('visible');
+                    
+                    // Update play button
+                    this.innerHTML = '<i class="fas fa-pause"></i>';
+                    this.classList.add('playing');
+                    
+                    // Play the audio
+                    currentAudio.play();
+                    isPlaying = true;
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    
+                    // When audio ends
+                    currentAudio.addEventListener('ended', function() {
+                        const playBtn = currentTrack.querySelector('.play-btn');
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        playBtn.classList.remove('playing');
+                        isPlaying = false;
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    });
+                });
+            });
+            
+            // Featured track play button
+            featuredPlayBtn.addEventListener('click', function() {
+                const featuredTrack = document.querySelector('.featured-track');
+                const title = featuredTrack.querySelector('.featured-title').textContent;
+                const artist = featuredTrack.querySelector('.featured-artist').textContent;
+                
+                // For demo purposes, we'll use the same audio URL
+                const audioUrl = "https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3";
+                
+                // Stop current audio if playing
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    
+                    // Reset previous play button if it exists
+                    if (currentTrack) {
+                        const prevPlayBtn = currentTrack.querySelector('.play-btn');
+                        if (prevPlayBtn) {
+                            prevPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
+                            prevPlayBtn.classList.remove('playing');
+                        }
+                    }
+                }
+                
+                // Create new audio element
+                currentAudio = new Audio(audioUrl);
+                currentTrack = featuredTrack;
+                
+                // Update now playing bar
+                nowPlayingTitle.textContent = title;
+                nowPlayingArtist.textContent = artist;
+                nowPlayingBar.classList.add('visible');
+                
+                // Update featured play button text
+                this.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                
+                // Play the audio
+                currentAudio.play();
+                isPlaying = true;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                
+                // When audio ends
+                currentAudio.addEventListener('ended', function() {
+                    featuredPlayBtn.innerHTML = '<i class="fas fa-play"></i> Play Now';
+                    isPlaying = false;
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                });
+            });
+            
+            // Now playing controls
+            function togglePlayPause() {
+                if (!currentAudio) return;
+                
+                if (isPlaying) {
+                    currentAudio.pause();
+                    isPlaying = false;
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    
+                    // Update the specific play button
+                    if (currentTrack.classList.contains('featured-track')) {
+                        featuredPlayBtn.innerHTML = '<i class="fas fa-play"></i> Play Now';
+                    } else {
+                        const playBtn = currentTrack.querySelector('.play-btn');
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                } else {
+                    currentAudio.play();
+                    isPlaying = true;
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    
+                    // Update the specific play button
+                    if (currentTrack.classList.contains('featured-track')) {
+                        featuredPlayBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+                    } else {
+                        const playBtn = currentTrack.querySelector('.play-btn');
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }
+                }
+            }
+            
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            
+            
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

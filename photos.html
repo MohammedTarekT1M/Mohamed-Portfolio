@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <link rel="shortcut icon" href="img/photos.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/photos.css">
+</head>
+<body>
+  <label class="ios-toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider"></span>
+            </label>
+    <div class="page-shell">
+    <div class="container">
+        <section id="photography" class="card about photography">
+          <h2>Photography</h2>
+          <p class="proj-desc">
+            Some of my favorite shots. Click any photo to view it larger.
+          </p>
+          <div class="cta-row gallery-grid">
+            <img src="img/IMG_2440.JPEG" alt="Sunset at the beach 1" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2528.JPEG" alt="Sunset at the beach 2" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2564.JPEG" alt="Modern tower" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2569.JPEG" alt="Dunes and sky" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2751.JPEG" alt="City building" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2759.JPEG" alt="Historic shopping center" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2770.JPEG" alt="Department store facade" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2772.JPEG" alt="Windmill close-up" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2801.JPEG" alt="Castle gate" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2807.JPEG" alt="Lake and clouds" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2853.JPEG" alt="Windmills landscape" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2855.JPEG" alt="Narrow alley" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2868.JPEG" alt="City architecture" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2886.JPEG" alt="Forest light rays" class="gallery-item" loading="lazy">
+                  <img src="img/IMG_2857.JPEG" alt="DIOR" class="gallery-item" loading="lazy">
+          </div>
+        </section>
+    </div>
+    
+    <div class="dock-container">
+        <div class="dock">
+            <div class="dock-item">
+                <a href="index.html">
+                    <img src="img/home.png" alt="Home" class="light-icon">
+                    <img src="img/home-dark.png" alt="Home" class="dark-icon">
+                </a>
+                <span class="label">Home</span>
+            </div>
+            <div class="dock-item">
+                <a href="projects.html">
+                    <img src="img/projects.png" alt="Projects" class="light-icon">
+                    <img src="img/projects-dark.png" alt="Projects" class="dark-icon">
+                </a>
+                <span class="label">Projects</span>
+            </div>
+            <div class="dock-item">
+                <a href="about-me.html">
+                    <img src="img/about_me.png" alt="About Me" class="light-icon">
+                    <img src="img/about_me.png" alt="About Me" class="dark-icon">
+                </a>
+                <span class="label">About Me</span>
+            </div>
+            <div class="dock-item">
+                <a href="contact.html">
+                    <img src="img/contact.png" alt="Contact" class="light-icon">
+                    <img src="img/contact-dark.png" alt="Contact" class="dark-icon">
+                </a>
+                <span class="label">Contact</span>
+            </div>
+            <div class="dock-item">
+                <a href="photos.html">
+                    <img src="img/photos.png" alt="Photos" class="light-icon">
+                    <img src="img/photos-dark.png" alt="Photos" class="dark-icon">
+                </a>
+                <span class="label">Photos</span>
+            </div>
+            <div class="separator"></div>
+            <div class="dock-item">
+                <a href="books.html">
+                    <img src="img/books.png" alt="Books" class="light-icon">
+                    <img src="img/books-dark.png" alt="Books" class="dark-icon">
+                </a>
+                <span class="label">Books</span>
+            </div>
+            <div class="dock-item">
+                <a href="music.html">
+                    <img src="img/music.png" alt="Music" class="light-icon">
+                    <img src="img/music-dark.png" alt="Music" class="dark-icon">
+                </a>
+                <span class="label">Music</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Profile enlarged" />
+      </div>
+
+    <script>
+const lightbox = document.querySelector('#lightbox');
+const lightboxImg = document.querySelector('#lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    resetZoom();
+  });
+}
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+    resetZoom();
+  }
+});
+// Lightbox for gallery images
+const galleryImages = document.querySelectorAll('.gallery-item');
+if (galleryImages && galleryImages.length) {
+  galleryImages.forEach((img) => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || '';
+      resetZoom();
+    });
+  });
+}
+
+// Close on Esc
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.style.display === 'block') {
+    lightbox.style.display = 'none';
+    resetZoom();
+  }
+});
+
+// ------- Zoom & Pan for lightbox image -------
+let zoomScale = 1;
+let translateX = 0;
+let translateY = 0;
+let isPanning = false;
+let startX = 0;
+let startY = 0;
+
+function applyTransform() {
+  lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomScale})`;
+}
+
+function resetZoom() {
+  zoomScale = 1;
+  translateX = 0;
+  translateY = 0;
+  applyTransform();
+  lightbox.classList.remove('zoomed');
+}
+
+// Wheel zoom (desktop)
+lightboxImg.addEventListener('wheel', (e) => {
+  if (lightbox.style.display !== 'block') return;
+  e.preventDefault();
+  const delta = -Math.sign(e.deltaY) * 0.2; // zoom in on wheel up
+  const newScale = Math.min(4, Math.max(1, zoomScale + delta));
+  const rect = lightboxImg.getBoundingClientRect();
+  const cx = e.clientX - rect.left - rect.width / 2;
+  const cy = e.clientY - rect.top - rect.height / 2;
+  if (newScale !== zoomScale) {
+    // Zoom towards cursor
+    translateX -= (cx / zoomScale) * (newScale - zoomScale);
+    translateY -= (cy / zoomScale) * (newScale - zoomScale);
+    zoomScale = newScale;
+    applyTransform();
+  }
+  if (zoomScale > 1) {
+    lightbox.classList.add('zoomed');
+  } else {
+    lightbox.classList.remove('zoomed');
+  }
+}, { passive: false });
+
+// Double-click/tap to toggle zoom
+lightboxImg.addEventListener('dblclick', () => {
+  if (zoomScale === 1) {
+    zoomScale = 2.5;
+    lightbox.classList.add('zoomed');
+  } else {
+    resetZoom();
+    return;
+  }
+  applyTransform();
+});
+
+// Pan when zoomed
+lightboxImg.addEventListener('mousedown', (e) => {
+  if (zoomScale === 1) return;
+  isPanning = true;
+  startX = e.clientX - translateX;
+  startY = e.clientY - translateY;
+  lightbox.classList.add('dragging');
+});
+
+window.addEventListener('mousemove', (e) => {
+  if (!isPanning) return;
+  translateX = e.clientX - startX;
+  translateY = e.clientY - startY;
+  applyTransform();
+});
+
+window.addEventListener('mouseup', () => {
+  isPanning = false;
+  lightbox.classList.remove('dragging');
+});
+
+// Touch pinch-zoom and pan (basic)
+let lastTouchDistance = 0;
+lightboxImg.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 2) {
+    lastTouchDistance = getTouchDistance(e.touches[0], e.touches[1]);
+  } else if (e.touches.length === 1 && zoomScale > 1) {
+    startX = e.touches[0].clientX - translateX;
+    startY = e.touches[0].clientY - translateY;
+  }
+}, { passive: false });
+
+lightboxImg.addEventListener('touchmove', (e) => {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+    const current = getTouchDistance(e.touches[0], e.touches[1]);
+    const delta = (current - lastTouchDistance) / 200; // scale factor
+    const newScale = Math.min(4, Math.max(1, zoomScale + delta));
+    zoomScale = newScale;
+    lastTouchDistance = current;
+    applyTransform();
+    if (zoomScale > 1) lightbox.classList.add('zoomed'); else lightbox.classList.remove('zoomed');
+  } else if (e.touches.length === 1 && zoomScale > 1) {
+    e.preventDefault();
+    translateX = e.touches[0].clientX - startX;
+    translateY = e.touches[0].clientY - startY;
+    applyTransform();
+  }
+}, { passive: false });
+
+function getTouchDistance(a, b) {
+  const dx = a.clientX - b.clientX;
+  const dy = a.clientY - b.clientY;
+  return Math.hypot(dx, dy);
+}
+
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
