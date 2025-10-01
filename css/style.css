@@ -47,7 +47,7 @@ p {
 /* Dock Styles */
 .dock-container {
     position: fixed;
-    bottom: 20px;
+    bottom: 0px;
     left: 0;
     right: 0;
     display: flex;
@@ -98,7 +98,7 @@ p {
 
 .dock-item .label {
     position: absolute;
-    bottom: -30px;
+    top: -20px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 4px 10px;
