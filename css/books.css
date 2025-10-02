@@ -177,7 +177,6 @@
 
 .featured-cover {
     width: 300px;
-    height: 450px;
     object-fit: cover;
 }
 
@@ -230,6 +229,11 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 45, 112, 0.4);
 }
+
+body.dark p {
+    color: #292424 !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
