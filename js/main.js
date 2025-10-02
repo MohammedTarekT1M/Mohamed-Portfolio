@@ -99,3 +99,72 @@ document.body.style.visibility = 'hidden';
 window.addEventListener('load', function() {
     document.body.style.visibility = 'visible';
 });
+
+// Active Page Indicator for Dock
+function updateActivePageIndicator() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Remove active class from all dock items
+    document.querySelectorAll('.dock-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Find and activate the current page's dock item
+    const dockItems = document.querySelectorAll('.dock-item');
+    dockItems.forEach(item => {
+        const link = item.querySelector('a');
+        if (link) {
+            const href = link.getAttribute('href');
+            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                item.classList.add('active');
+            }
+        }
+    });
+    
+    // Special case for home page when URL is just '/'
+    if (currentPage === '' || currentPage === '/' || currentPage === 'index.html') {
+        const homeItem = document.querySelector('.dock-item a[href="index.html"]')?.closest('.dock-item') ||
+                        document.querySelector('.dock-item a[href="/"]')?.closest('.dock-item') ||
+                        document.querySelector('.dock-item a[href="./"]')?.closest('.dock-item');
+        if (homeItem) {
+            homeItem.classList.add('active');
+        }
+    }
+}
+
+// Enhanced dock item interactions
+function initializeDock() {
+    const dockItems = document.querySelectorAll('.dock-item');
+    
+    dockItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' || e.target.tagName === 'IMG') {
+                return; // Let the link work normally
+            }
+            
+            // Add a subtle animation on click
+            this.style.transform = 'translateY(-5px) scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 300);
+            
+            const appName = this.querySelector('.label').textContent;
+            console.log(`Opening ${appName}...`);
+        });
+    });
+    
+    // Update active page indicator
+    updateActivePageIndicator();
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeDock();
+    
+    // Update active indicator after page load
+    setTimeout(updateActivePageIndicator, 100);
+});
+
+// Also update when navigating (for SPA-like behavior)
+window.addEventListener('popstate', updateActivePageIndicator);

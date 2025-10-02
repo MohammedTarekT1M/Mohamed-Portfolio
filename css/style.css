@@ -389,6 +389,71 @@ body.dark li {
   transition: transform 0.4s cubic-bezier(.4,.0,.2,1),
               background 0.3s;
 }
+/* macOS-Style Small Dot Active Indicator */
+.dock-item::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Position closer to the icon */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 4px; /* Very small dot */
+    height: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dock-item.active::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.dock-item.active:hover::after {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+}
+
+/* Minimal active state for dock items (optional) */
+.dock-item.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode support */
+body.dark .dock-item::after {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Ensure dock has enough padding for the dots */
+.dock {
+    padding: 8px 16px 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dock-item::after {
+        width: 5px;
+        height: 5px;
+        bottom: -7px;
+    }
+    
+    .dock {
+        padding: 6px 12px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dock-item::after {
+        width: 4px;
+        height: 4px;
+        bottom: -6px;
+    }
+    
+    .dock {
+        padding: 4px 8px 8px;
+    }
+}
 
 /* ON state */
 input:checked + .slider {
@@ -471,7 +536,7 @@ body.dark .dock-item .dark-icon {
 /* Responsive Design */
 @media (max-width: 768px) {
     .dock {
-        padding: 6px 12px;
+        padding: 10px 12px;
         border-radius: 18px;
     }
     
@@ -487,11 +552,14 @@ body.dark .dock-item .dark-icon {
     p {
         font-size: 1rem;
     }
+    .separator {
+        height: 50px;
+    }
 }
 
 @media (max-width: 480px) {
     .dock {
-        padding: 4px 8px;
+        padding: 10px 0px;
         border-radius: 14px;
     }
     
@@ -505,6 +573,6 @@ body.dark .dock-item .dark-icon {
     }
     
     .separator {
-        height: 30px;
+        height: 50px;
     }
 }

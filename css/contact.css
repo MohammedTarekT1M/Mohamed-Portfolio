@@ -190,7 +190,7 @@
     }
     
     .dock {
-        padding: 6px 12px;
+        padding: 10px 12px;
         border-radius: 18px;
     }
     
@@ -207,7 +207,7 @@
     }
     
     .dock {
-        padding: 4px 8px;
+        padding: 10px 0px;
         border-radius: 14px;
     }
     
@@ -219,8 +219,5 @@
     .dock-item:hover {
         transform: translateY(-8px) scale(1.15);
     }
-    
-    .separator {
-        height: 30px;
-    }
+
 }
