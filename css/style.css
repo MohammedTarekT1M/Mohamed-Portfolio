@@ -208,7 +208,8 @@ body.dark .hello-text h1 {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(120deg, #3b82f6, #06b6d4);
+    background: url(https://images2.alphacoders.com/102/thumb-1920-1020362.jpg) no-repeat center center fixed;
+    background-size: cover;
     color: white;
     min-height: 100vh;
     display: flex;
@@ -469,7 +470,8 @@ input:checked + .slider::before {
 }
 /* Dark Mode Styles */
 body.dark {
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #2d2d2d) !important;
+    background: url(https://images5.alphacoders.com/102/thumb-1920-1020361.jpg) no-repeat center center fixed !important;
+    background-size: cover !important;
     color: #ffffff !important;
 }
 
