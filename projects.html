@@ -16,9 +16,16 @@
     <div class="container">
         <section id="projects" class="card projects">
           <h2>Projects</h2>
+          
+          <!-- Project Category Buttons -->
+          <div class="project-buttons">
+            <button class="project-btn active" data-category="all">All Projects</button>
+            <button class="project-btn" data-category="school">School Projects</button>
+            <button class="project-btn" data-category="side">Side Projects</button>
+          </div>
     
           <div class="project-grid">
-            <article class="project">
+            <article class="project" data-category="side">
               <img class="proj-thumb" src="img/begin.png" alt="Escape Room thumbnail">
               <h3>Escape Room</h3>
               <p class="proj-desc">A simple escape room game with some challenges and puzzles.</p>
@@ -29,7 +36,7 @@
               </div>
             </article>
     
-            <article class="project">
+            <article class="project" data-category="side">
               <img class="proj-thumb" src="img/hogerlager.png" alt="HogerLager thumbnail">
               <h3>HogerLager</h3>
               <p class="proj-desc">A simple game to guess lower or higher</p>
@@ -40,7 +47,7 @@
               </div>
             </article>
     
-            <article class="project">
+            <article class="project" data-category="side">
               <img class="proj-thumb" src="img/gamehub.png" alt="GameHub thumbnail">
               <h3>GameHub</h3>
               <p class="proj-desc">A web platform showcasing small games.</p>
@@ -51,7 +58,7 @@
               </div>
             </article>
     
-            <article class="project">
+            <article class="project" data-category="side">
               <img class="proj-thumb" src="img/games4u.png" alt="Games4U thumbnail">
               <h3>Games4U</h3>
               <p class="proj-desc">A web platform that displays game trailers and information about them.</p>
@@ -62,7 +69,7 @@
               </div>
             </article>
     
-            <article class="project">
+            <article class="project" data-category="school">
               <img class="proj-thumb" src="img/mjmflix.png" alt="Project X thumbnail">
               <h3>MJMFLIX</h3>
               <p class="proj-desc">A website to watch movies and series, play some games, and download high-quality wallpapers</p>
@@ -73,7 +80,7 @@
               </div>
             </article>
     
-            <article class="project">
+            <article class="project" data-category="school">
               <img class="proj-thumb" src="img/rodekapje.png" alt="LittleRedCap thumbnail">
               <h3>LittleRedCap (Greenfoot)</h3>
               <p class="proj-desc">A Java Greenfoot project inspired by Red Riding Hood.</p>
@@ -84,7 +91,7 @@
               </div>
             </article>
     
-            <article class="project">
+            <article class="project" data-category="side">
               <img class="proj-thumb" src="img/men.png" alt="Apache Webserver Exam thumbnail">
               <h3>Mens Erger Je Niet</h3>
               <p class="proj-desc">A website to play Ludo with friends</p>
@@ -95,7 +102,7 @@
               </div>
             </article>
 
-            <article class="project">
+            <article class="project" data-category="school">
                 <img class="proj-thumb" src="img/logo.png" alt="Apache Webserver Exam thumbnail">
                 <h3>Pizza4U</h3>
                 <p class="proj-desc">Pizza ordering site</p>
@@ -165,24 +172,37 @@
     </div>
 
     <script>
-        // Add some interactivity
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     const dockItems = document.querySelectorAll('.dock-item');
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectButtons = document.querySelectorAll('.project-btn');
+            const projects = document.querySelectorAll('.project');
             
-        //     dockItems.forEach(item => {
-        //         item.addEventListener('click', function() {
-        //             // Add a subtle animation on click
-        //             this.style.transform = 'translateY(-5px) scale(1.1)';
-        //             setTimeout(() => {
-        //                 this.style.transform = '';
-        //             }, 300);
+            projectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    projectButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
                     
-        //             // In a real implementation, you would navigate to the appropriate page
-        //             const appName = this.querySelector('.label').textContent;
-        //             alert(`Opening ${appName}...`);
-        //         });
-        //     });
-        // });
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter projects with slide animation
+                    projects.forEach(project => {
+                        const projectCategory = project.getAttribute('data-category');
+                        
+                        if (category === 'all' || projectCategory === category) {
+                            project.style.display = 'block';
+                            project.style.animation = 'slideInUp 0.5s ease-out';
+                        } else {
+                            project.style.animation = 'slideOutDown 0.3s ease-in';
+                            setTimeout(() => {
+                                project.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
     </script>
     <script src="js/main.js"></script>
 </body>
