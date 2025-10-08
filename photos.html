@@ -7,251 +7,504 @@
     <link rel="shortcut icon" href="img/photos.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/photos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <label class="ios-toggle">
-              <input type="checkbox" id="darkModeToggle">
-              <span class="slider"></span>
-            </label>
+    <label class="ios-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+    </label>
+
     <div class="page-shell">
-    <div class="container">
-        <section id="photography" class="card about photography">
-          <h2>Photography</h2>
-          <p class="proj-desc">
-            Some of my favorite shots. Click any photo to view it larger.
-          </p>
-          <div class="cta-row gallery-grid">
-            <img src="img/IMG_2440.JPEG" alt="Sunset at the beach 1" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2528.JPEG" alt="Sunset at the beach 2" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2564.JPEG" alt="Modern tower" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2569.JPEG" alt="Dunes and sky" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2751.JPEG" alt="City building" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2759.JPEG" alt="Historic shopping center" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2770.JPEG" alt="Department store facade" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2772.JPEG" alt="Windmill close-up" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2801.JPEG" alt="Castle gate" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2807.JPEG" alt="Lake and clouds" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2853.JPEG" alt="Windmills landscape" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2855.JPEG" alt="Narrow alley" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2868.JPEG" alt="City architecture" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2886.JPEG" alt="Forest light rays" class="gallery-item" loading="lazy">
-                  <img src="img/IMG_2857.JPEG" alt="DIOR" class="gallery-item" loading="lazy">
-          </div>
-        </section>
-    </div>
-    
-    <div class="dock-container">
-        <div class="dock">
-            <div class="dock-item">
-                <a href="index.html">
-                    <img src="img/home.png" alt="Home" class="light-icon">
-                    <img src="img/home-dark.png" alt="Home" class="dark-icon">
-                </a>
-                <span class="label">Home</span>
+        <div class="container">
+            <section id="photography" class="card about photography">
+                <h2>Photography</h2>
+                <p class="proj-desc">
+                    Some of my favorite shots. Click any photo to view it larger.
+                </p>
+
+                <!-- Photo Viewer -->
+                <div class="photo-viewer">
+                    <button class="nav-arrow arrow-left" id="prevPhoto">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <button class="nav-arrow arrow-right" id="nextPhoto">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="photo-display">
+                        <img src="" alt="" class="main-photo" id="mainPhoto">
+                        <div class="photo-info">
+                            <h2 class="photo-title" id="photoTitle">Photo Title</h2>
+                            <p class="photo-description" id="photoDescription">Photo description</p>
+                            <div class="photo-counter" id="photoCounter">1 / 8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Thumbnails -->
+                <div class="photo-thumbnails">
+                    <h2 class="section-title">Gallery</h2>
+                    <div class="thumbnails-grid" id="thumbnailsGrid">
+                        <!-- Thumbnails will be populated here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="lightbox-counter" id="lightboxCounter">1 / 8</div>
+            
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                <div class="lightbox-info">
+                    <h3 class="lightbox-title" id="lightboxTitle">Photo Title</h3>
+                    <p class="lightbox-description" id="lightboxDescription">Photo description</p>
+                </div>
             </div>
-            <div class="dock-item">
-                <a href="projects.html">
-                    <img src="img/projects.png" alt="Projects" class="light-icon">
-                    <img src="img/projects-dark.png" alt="Projects" class="dark-icon">
-                </a>
-                <span class="label">Projects</span>
-            </div>
-            <div class="dock-item">
-                <a href="about-me.html">
-                    <img src="img/about_me.png" alt="About Me" class="light-icon">
-                    <img src="img/about_me.png" alt="About Me" class="dark-icon">
-                </a>
-                <span class="label">About Me</span>
-            </div>
-            <div class="dock-item">
-                <a href="contact.html">
-                    <img src="img/contact.png" alt="Contact" class="light-icon">
-                    <img src="img/contact-dark.png" alt="Contact" class="dark-icon">
-                </a>
-                <span class="label">Contact</span>
-            </div>
-            <div class="dock-item">
-                <a href="photos.html">
-                    <img src="img/photos.png" alt="Photos" class="light-icon">
-                    <img src="img/photos-dark.png" alt="Photos" class="dark-icon">
-                </a>
-                <span class="label">Photos</span>
-            </div>
-            <div class="separator"></div>
-            <div class="dock-item">
-                <a href="books.html">
-                    <img src="img/books.png" alt="Books" class="light-icon">
-                    <img src="img/books-dark.png" alt="Books" class="dark-icon">
-                </a>
-                <span class="label">Books</span>
-            </div>
-            <div class="dock-item">
-                <a href="music.html">
-                    <img src="img/music.png" alt="Music" class="light-icon">
-                    <img src="img/music-dark.png" alt="Music" class="dark-icon">
-                </a>
-                <span class="label">Music</span>
+        </div>
+
+        <!-- Dock -->
+        <div class="dock-container">
+            <div class="dock">
+                <div class="dock-item">
+                    <a href="index.html">
+                        <img src="img/home.png" alt="Home" class="light-icon">
+                        <img src="img/home-dark.png" alt="Home" class="dark-icon">
+                    </a>
+                    <span class="label">Home</span>
+                </div>
+                <div class="dock-item">
+                    <a href="projects.html">
+                        <img src="img/projects.png" alt="Projects" class="light-icon">
+                        <img src="img/projects-dark.png" alt="Projects" class="dark-icon">
+                    </a>
+                    <span class="label">Projects</span>
+                </div>
+                <div class="dock-item">
+                    <a href="about-me.html">
+                        <img src="img/about_me.png" alt="About Me" class="light-icon">
+                        <img src="img/about_me.png" alt="About Me" class="dark-icon">
+                    </a>
+                    <span class="label">About Me</span>
+                </div>
+                <div class="dock-item">
+                    <a href="contact.html">
+                        <img src="img/contact.png" alt="Contact" class="light-icon">
+                        <img src="img/contact-dark.png" alt="Contact" class="dark-icon">
+                    </a>
+                    <span class="label">Contact</span>
+                </div>
+                <div class="dock-item">
+                    <a href="photos.html">
+                        <img src="img/photos.png" alt="Photos" class="light-icon">
+                        <img src="img/photos-dark.png" alt="Photos" class="dark-icon">
+                    </a>
+                    <span class="label">Photos</span>
+                </div>
+                <div class="separator"></div>
+                <div class="dock-item">
+                    <a href="books.html">
+                        <img src="img/books.png" alt="Books" class="light-icon">
+                        <img src="img/books-dark.png" alt="Books" class="dark-icon">
+                    </a>
+                    <span class="label">Books</span>
+                </div>
+                <div class="dock-item">
+                    <a href="music.html">
+                        <img src="img/music.png" alt="Music" class="light-icon">
+                        <img src="img/music-dark.png" alt="Music" class="dark-icon">
+                    </a>
+                    <span class="label">Music</span>
+                </div>
             </div>
         </div>
     </div>
-    </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Profile enlarged" />
-      </div>
-
-    <script>
-const lightbox = document.querySelector('#lightbox');
-const lightboxImg = document.querySelector('#lightbox-img');
-const closeBtn = document.querySelector('.lightbox .close');
-
-if (closeBtn) {
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    resetZoom();
-  });
-}
-
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = 'none';
-    resetZoom();
-  }
-});
-// Lightbox for gallery images
-const galleryImages = document.querySelectorAll('.gallery-item');
-if (galleryImages && galleryImages.length) {
-  galleryImages.forEach((img) => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'block';
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || '';
-      resetZoom();
-    });
-  });
-}
-
-// Close on Esc
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox.style.display === 'block') {
-    lightbox.style.display = 'none';
-    resetZoom();
-  }
-});
-
-// ------- Zoom & Pan for lightbox image -------
-let zoomScale = 1;
-let translateX = 0;
-let translateY = 0;
-let isPanning = false;
-let startX = 0;
-let startY = 0;
-
-function applyTransform() {
-  lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomScale})`;
-}
-
-function resetZoom() {
-  zoomScale = 1;
-  translateX = 0;
-  translateY = 0;
-  applyTransform();
-  lightbox.classList.remove('zoomed');
-}
-
-// Wheel zoom (desktop)
-lightboxImg.addEventListener('wheel', (e) => {
-  if (lightbox.style.display !== 'block') return;
-  e.preventDefault();
-  const delta = -Math.sign(e.deltaY) * 0.2; // zoom in on wheel up
-  const newScale = Math.min(4, Math.max(1, zoomScale + delta));
-  const rect = lightboxImg.getBoundingClientRect();
-  const cx = e.clientX - rect.left - rect.width / 2;
-  const cy = e.clientY - rect.top - rect.height / 2;
-  if (newScale !== zoomScale) {
-    // Zoom towards cursor
-    translateX -= (cx / zoomScale) * (newScale - zoomScale);
-    translateY -= (cy / zoomScale) * (newScale - zoomScale);
-    zoomScale = newScale;
-    applyTransform();
-  }
-  if (zoomScale > 1) {
-    lightbox.classList.add('zoomed');
-  } else {
-    lightbox.classList.remove('zoomed');
-  }
-}, { passive: false });
-
-// Double-click/tap to toggle zoom
-lightboxImg.addEventListener('dblclick', () => {
-  if (zoomScale === 1) {
-    zoomScale = 2.5;
-    lightbox.classList.add('zoomed');
-  } else {
-    resetZoom();
-    return;
-  }
-  applyTransform();
-});
-
-// Pan when zoomed
-lightboxImg.addEventListener('mousedown', (e) => {
-  if (zoomScale === 1) return;
-  isPanning = true;
-  startX = e.clientX - translateX;
-  startY = e.clientY - translateY;
-  lightbox.classList.add('dragging');
-});
-
-window.addEventListener('mousemove', (e) => {
-  if (!isPanning) return;
-  translateX = e.clientX - startX;
-  translateY = e.clientY - startY;
-  applyTransform();
-});
-
-window.addEventListener('mouseup', () => {
-  isPanning = false;
-  lightbox.classList.remove('dragging');
-});
-
-// Touch pinch-zoom and pan (basic)
-let lastTouchDistance = 0;
-lightboxImg.addEventListener('touchstart', (e) => {
-  if (e.touches.length === 2) {
-    lastTouchDistance = getTouchDistance(e.touches[0], e.touches[1]);
-  } else if (e.touches.length === 1 && zoomScale > 1) {
-    startX = e.touches[0].clientX - translateX;
-    startY = e.touches[0].clientY - translateY;
-  }
-}, { passive: false });
-
-lightboxImg.addEventListener('touchmove', (e) => {
-  if (e.touches.length === 2) {
-    e.preventDefault();
-    const current = getTouchDistance(e.touches[0], e.touches[1]);
-    const delta = (current - lastTouchDistance) / 200; // scale factor
-    const newScale = Math.min(4, Math.max(1, zoomScale + delta));
-    zoomScale = newScale;
-    lastTouchDistance = current;
-    applyTransform();
-    if (zoomScale > 1) lightbox.classList.add('zoomed'); else lightbox.classList.remove('zoomed');
-  } else if (e.touches.length === 1 && zoomScale > 1) {
-    e.preventDefault();
-    translateX = e.touches[0].clientX - startX;
-    translateY = e.touches[0].clientY - startY;
-    applyTransform();
-  }
-}, { passive: false });
-
-function getTouchDistance(a, b) {
-  const dx = a.clientX - b.clientX;
-  const dy = a.clientY - b.clientY;
-  return Math.hypot(dx, dy);
-}
-
-    </script>
     <script src="js/main.js"></script>
+    <script>
+      // Photos Gallery with Arrow Navigation and Lightbox
+class PhotosGallery {
+    constructor() {
+        this.photos = [
+            {
+                id: 1,
+                title: "Golden Horizon",
+                description: "Beautiful sunset over the sea",
+                date: "June 2024",
+                image: "img/IMG_2440.JPEG",
+                thumbnail: "img/IMG_2440.JPEG"
+            },
+            {
+                id: 2,
+                title: "Whispers of Light",
+                description: "Sunlight gently filters through the green leaves.",
+                date: "May 2024",
+                image: "img/IMG_2528.JPEG",
+                thumbnail: "img/IMG_2528.JPEG"
+            },
+            {
+                id: 3,
+                title: "Stone Guardians",
+                description: "Towering stone walls and battlements rise against the sky.",
+                date: "April 2024",
+                image: "img/IMG_2564.JPEG",
+                thumbnail: "img/IMG_2564.JPEG"
+            },
+            {
+                id: 4,
+                title: "The Fortress of Time",
+                description: "A massive stone castle stands firm under the cloudy sky.",
+                date: "March 2024",
+                image: "img/IMG_2569.JPEG",
+                thumbnail: "img/IMG_2569.JPEG"
+            },
+            {
+                id: 5,
+                title: "House of Serenity",
+                description: "Elegant minarets and arched windows rise towards the bright sky.",
+                date: "February 2024",
+                image: "img/IMG_2751.JPEG",
+                thumbnail: "img/IMG_2751.JPEG"
+            },
+            {
+                id: 6,
+                title: "Calm Horizons",
+                description: "Gentle waves ripple beneath a wide blue sky.",
+                date: "January 2024",
+                image: "img/IMG_2759.JPEG",
+                thumbnail: "img/IMG_2759.JPEG"
+            },
+            {
+                id: 7,
+                title: "Golden Dusk",
+                description: "Sunlight breaks through heavy clouds over the calm sea.",
+                date: "December 2023",
+                image: "img/IMG_2770.JPEG",
+                thumbnail: "img/IMG_2770.JPEG"
+            },
+            {
+                id: 8,
+                title: "Whispers of the Wind",
+                description: "A wide blue sky filled with gentle clouds.",
+                date: "November 2023",
+                image: "img/IMG_2772.JPEG",
+                thumbnail: "img/IMG_2772.JPEG"
+            },
+            {
+                id: 9,
+                title: "Winds of Tradition",
+                description: "Classic Dutch windmills stand tall over green fields and calm waters.",
+                date: "November 2023",
+                image: "img/IMG_2801.JPEG",
+                thumbnail: "img/IMG_2801.JPEG"
+            },
+            {
+                id: 10,
+                title: "Windmill of Zaanse Schans",
+                description: "A traditional Dutch windmill with green wooden panels and a thatched roof stands proudly beneath a clear blue sky.",
+                date: "November 2023",
+                image: "img/IMG_2807.JPEG",
+                thumbnail: "img/IMG_2807.JPEG"
+            },
+            {
+                id: 11,
+                title: "De Bijenkorf",
+                description: "The grand facade of De Bijenkorf rises under a dramatic Amsterdam sky.",
+                date: "November 2023",
+                image: "img/IMG_2853.JPEG",
+                thumbnail: "img/IMG_2853.JPEG"
+            },
+            {
+                id: 12,
+                title: "Whispers of the Alley",
+                description: "A narrow alley in Amsterdam between tall buildings.",
+                date: "November 2023",
+                image: "img/IMG_2855.JPEG",
+                thumbnail: "img/IMG_2855.JPEG"
+            },
+            {
+                id: 13,
+                title: "Elegance on the Corner",
+                description: "The Dior building rises with classic charm beneath swirling clouds.",
+                date: "November 2023",
+                image: "img/IMG_2857.JPEG",
+                thumbnail: "img/IMG_2857.JPEG"
+            },
+            {
+                id: 14,
+                title: "Magnificence of Magna Plaza",
+                description: "The ornate towers of Magna Plaza rise elegantly against the shifting sky.",
+                date: "November 2023",
+                image: "img/IMG_2861.JPEG",
+                thumbnail: "img/IMG_2861.JPEG"
+            },
+            {
+                id: 15,
+                title: "Sun Over the City",
+                description: "Sunlight pierces through swirling clouds above a stately Amsterdam building.",
+                date: "November 2023",
+                image: "img/IMG_2868.JPEG",
+                thumbnail: "img/IMG_2868.JPEG"
+            },
+            {
+                id: 16,
+                title: "A’DAM Tower",
+                description: "The sleek, modern facade of the A’DAM Tower rises sharply into the cloudy sky.",
+                date: "November 2023",
+                image: "img/IMG_2886.JPEG",
+                thumbnail: "img/IMG_2886.JPEG"
+            }
+        ];
+
+        this.currentIndex = 0;
+        this.isLightboxOpen = false;
+        this.initializeGallery();
+    }
+
+    initializeGallery() {
+        this.mainPhoto = document.getElementById('mainPhoto');
+        this.photoTitle = document.getElementById('photoTitle');
+        this.photoDescription = document.getElementById('photoDescription');
+        this.photoCounter = document.getElementById('photoCounter');
+        this.prevButton = document.getElementById('prevPhoto');
+        this.nextButton = document.getElementById('nextPhoto');
+        this.thumbnailsGrid = document.getElementById('thumbnailsGrid');
+
+        // Lightbox elements
+        this.lightbox = document.getElementById('lightbox');
+        this.lightboxImage = document.getElementById('lightboxImage');
+        this.lightboxTitle = document.getElementById('lightboxTitle');
+        this.lightboxDescription = document.getElementById('lightboxDescription');
+        this.lightboxCounter = document.getElementById('lightboxCounter');
+        this.lightboxClose = document.getElementById('lightboxClose');
+        this.lightboxPrev = document.getElementById('lightboxPrev');
+        this.lightboxNext = document.getElementById('lightboxNext');
+
+        this.setupEventListeners();
+        this.populateThumbnails();
+        this.showPhoto(this.currentIndex);
+    }
+
+    setupEventListeners() {
+        // Arrow buttons
+        this.prevButton.addEventListener('click', () => {
+            this.previousPhoto();
+        });
+
+        this.nextButton.addEventListener('click', () => {
+            this.nextPhoto();
+        });
+
+        // Click to open lightbox
+        this.mainPhoto.addEventListener('click', () => {
+            this.openLightbox();
+        });
+
+        // Lightbox controls
+        this.lightboxClose.addEventListener('click', () => {
+            this.closeLightbox();
+        });
+
+        this.lightboxPrev.addEventListener('click', () => {
+            this.previousPhoto();
+        });
+
+        this.lightboxNext.addEventListener('click', () => {
+            this.nextPhoto();
+        });
+
+        // Close lightbox on background click
+        this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) {
+                this.closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (this.isLightboxOpen) {
+                switch(e.code) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        this.previousPhoto();
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        this.nextPhoto();
+                        break;
+                    case 'Escape':
+                        e.preventDefault();
+                        this.closeLightbox();
+                        break;
+                }
+            } else {
+                switch(e.code) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        this.previousPhoto();
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        this.nextPhoto();
+                        break;
+                    case 'Enter':
+                    case 'Space':
+                        e.preventDefault();
+                        this.openLightbox();
+                        break;
+                }
+            }
+        });
+
+        // Swipe support for touch devices
+        this.setupSwipeSupport();
+    }
+
+    setupSwipeSupport() {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const handleTouchStart = (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        };
+
+        const handleTouchEnd = (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe(touchStartX, touchEndX);
+        };
+
+        this.mainPhoto.addEventListener('touchstart', handleTouchStart);
+        this.mainPhoto.addEventListener('touchend', handleTouchEnd);
+        this.lightboxImage.addEventListener('touchstart', handleTouchStart);
+        this.lightboxImage.addEventListener('touchend', handleTouchEnd);
+    }
+
+    handleSwipe(startX, endX) {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                this.nextPhoto(); // Swipe left
+            } else {
+                this.previousPhoto(); // Swipe right
+            }
+        }
+    }
+
+    populateThumbnails() {
+        this.thumbnailsGrid.innerHTML = '';
+        
+        this.photos.forEach((photo, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'thumbnail';
+            thumbnail.innerHTML = `
+                <img src="${photo.thumbnail}" alt="${photo.title}" loading="lazy">
+                <div class="thumbnail-overlay">
+                    <div class="thumbnail-title">${photo.title}</div>
+                    <div class="thumbnail-date">${photo.date}</div>
+                </div>
+            `;
+            
+            thumbnail.addEventListener('click', () => {
+                this.showPhoto(index);
+            });
+            
+            this.thumbnailsGrid.appendChild(thumbnail);
+        });
+    }
+
+    showPhoto(index) {
+        // Validate index
+        if (index < 0) index = this.photos.length - 1;
+        if (index >= this.photos.length) index = 0;
+        
+        this.currentIndex = index;
+        const photo = this.photos[this.currentIndex];
+
+        // Add fade transition
+        this.mainPhoto.style.opacity = '0';
+        
+        setTimeout(() => {
+            this.mainPhoto.src = photo.image;
+            this.mainPhoto.alt = photo.title;
+            this.photoTitle.textContent = photo.title;
+            this.photoDescription.textContent = photo.description;
+            this.photoCounter.textContent = `${this.currentIndex + 1} / ${this.photos.length}`;
+            
+            this.mainPhoto.style.opacity = '1';
+        }, 200);
+
+        // Update lightbox if open
+        if (this.isLightboxOpen) {
+            this.updateLightbox();
+        }
+
+        // Update active thumbnail
+        this.updateActiveThumbnail();
+    }
+
+    updateLightbox() {
+        const photo = this.photos[this.currentIndex];
+        this.lightboxImage.src = photo.image;
+        this.lightboxImage.alt = photo.title;
+        this.lightboxTitle.textContent = photo.title;
+        this.lightboxDescription.textContent = photo.description;
+        this.lightboxCounter.textContent = `${this.currentIndex + 1} / ${this.photos.length}`;
+    }
+
+    updateActiveThumbnail() {
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumb, index) => {
+            if (index === this.currentIndex) {
+                thumb.classList.add('active');
+            } else {
+                thumb.classList.remove('active');
+            }
+        });
+    }
+
+    openLightbox() {
+        this.isLightboxOpen = true;
+        this.updateLightbox();
+        this.lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeLightbox() {
+        this.isLightboxOpen = false;
+        this.lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    nextPhoto() {
+        this.showPhoto(this.currentIndex + 1);
+    }
+
+    previousPhoto() {
+        this.showPhoto(this.currentIndex - 1);
+    }
+}
+
+// Initialize Photos Gallery
+document.addEventListener('DOMContentLoaded', function() {
+    new PhotosGallery();
+});
+    </script>
 </body>
 </html>
