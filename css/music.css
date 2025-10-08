@@ -13,7 +13,8 @@
     z-index:2;
     min-height:100vh;
     display:flex;
-    flex-direction:column
+    flex-direction:column;
+     padding-bottom: 120px; 
 }
 .glass, .site-header, .card, .site-footer {
   background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(255,255,255,0.08));
@@ -50,7 +51,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     padding: 40px 0;
-    padding-bottom: 140px;
+    padding-bottom: 20px;
 }
 
 .track-card {

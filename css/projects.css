@@ -13,7 +13,7 @@
     z-index:2;
     min-height:100vh;
     display:flex;
-    flex-direction:column
+    flex-direction:column;
 }
 .glass, .site-header, .card, .site-footer {
   background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(255,255,255,0.08));
