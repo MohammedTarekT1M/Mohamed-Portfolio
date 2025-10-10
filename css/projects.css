@@ -75,7 +75,39 @@
     border-radius:12px;
     background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     border:1px solid rgba(255,255,255,0.06);
-    box-shadow:0 6px 16px rgba(8,20,40,0.06)
+    box-shadow:0 6px 16px rgba(8,20,40,0.06);
+    position: relative;
+}
+
+/* Inline video preview that overlays the image area */
+.proj-video{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    height: 140px;
+    width: calc(100% - 24px);
+    border-radius: 8px;
+    object-fit: cover;
+    z-index: 5;
+    display: block;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 360ms cubic-bezier(.2,.9,.3,1), transform 360ms cubic-bezier(.2,.9,.3,1);
+    will-change: opacity, transform;
+    pointer-events: none;
+}
+
+.proj-video.visible{
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* When preview plays, subtly de-emphasize the static thumbnail */
+.project.playing .proj-thumb{
+    transform: scale(0.985);
+    filter: blur(1px) brightness(0.88);
+    transition: transform 360ms cubic-bezier(.2,.9,.3,1), filter 360ms;
 }
 .proj-thumb{
     width:100%;
