@@ -125,7 +125,7 @@
               </article>
 
               <article class="project" data-category="side">
-                <img class="proj-thumb" src="img/moflix-logo.png" alt="Apache Webserver Exam thumbnail">
+                <img class="proj-thumb" src="img/moflix.png" alt="Apache Webserver Exam thumbnail">
                 <h3>Moflix</h3>
                 <p class="proj-desc">Video streaming site</p>
                 <p class="tags">Technologies: HTML / CSS / JavaScript</p>
@@ -154,6 +154,17 @@
                 <div class="proj-actions">
                   <a class="btn small" href="https://github.com/MohammedTarekT1M/win11.git" target="_blank">GitHub</a>
                   <a class="btn small ghost" href="https://mohammedtarekt1m.github.io/win11/" target="_blank">Live Demo</a>
+                </div>
+              </article>
+
+              <article class="project" data-category="side">
+                <img class="proj-thumb" src="img/spiderman2-logo.jpg" alt="Apache Webserver Exam thumbnail">
+                <h3>Spider-Man</h3>
+                <p class="proj-desc">Spider-Man Trailers Website </p>
+                <p class="tags">Technologies: HTML / CSS / JavaScript</p>
+                <div class="proj-actions">
+                  <a class="btn small" href="https://github.com/MohammedTarekT1M/spiderman.git" target="_blank">GitHub</a>
+                  <a class="btn small ghost" href="https://mohammedtarekt1m.github.io/spiderman/" target="_blank">Live Demo</a>
                 </div>
               </article>
           </div>
@@ -220,6 +231,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const projectButtons = document.querySelectorAll('.project-btn');
             const projects = document.querySelectorAll('.project');
+      const grid = document.querySelector('.project-grid');
             
             projectButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -230,8 +242,15 @@
                     
                     const category = this.getAttribute('data-category');
                     
-                    // Filter projects with slide animation
-                    projects.forEach(project => {
+          // Toggle two-column layout when 'side' category is selected
+          if (category === 'side') {
+            grid.classList.add('two-col');
+          } else {
+            grid.classList.remove('two-col');
+          }
+
+          // Filter projects with slide animation
+          projects.forEach(project => {
                         const projectCategory = project.getAttribute('data-category');
                         
                         if (category === 'all' || projectCategory === category) {
